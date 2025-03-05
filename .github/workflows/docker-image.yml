@@ -36,7 +36,7 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          IMAGE_NAME="${{ secrets.YOUR_FULL_NAME }}_ecr_lab"
+          IMAGE_NAME="gideonagbosu_ecr_lab"
           ECR_REPO="public.ecr.aws/v3l0q3i3/ecr-lab"
           BUILD_NUMBER=${{ github.run_number }}
           docker build -t $IMAGE_NAME .
@@ -45,5 +45,5 @@ jobs:
       - name: Push Docker image to ECR
         run: |
           ECR_REPO="public.ecr.aws/v3l0q3i3/ecr-lab"
-          IMAGE_NAME="${{ secrets.YOUR_FULL_NAME }}_ecr_lab"
+          IMAGE_NAME="gideonagbosu_ecr_lab"
           docker push $ECR_REPO:$IMAGE_NAME:$BUILD_NUMBER
