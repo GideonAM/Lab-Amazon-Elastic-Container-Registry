@@ -44,4 +44,4 @@ jobs:
       - name: Push Docker image to ECR
         run: |
           ECR_REPO="public.ecr.aws/v3l0q3i3/ecr-lab"
-          docker push $ECR_REPO:latest
+          docker push $ECR_REPO:$IMAGE_NAME
