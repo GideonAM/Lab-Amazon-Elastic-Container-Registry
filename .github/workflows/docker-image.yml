@@ -36,12 +36,12 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          IMAGE_NAME="gideonagbosu_ecr_lab"
+          IMAGE_NAME="gideon_agbosu_ecr_lab"
           ECR_REPO="public.ecr.aws/v3l0q3i3/ecr-lab"
           docker build -t $IMAGE_NAME .
-          docker tag $IMAGE_NAME:latest $ECR_REPO:latest
+          docker tag $IMAGE_NAME:latest $ECR_REPO:$IMAGE_NAME
 
       - name: Push Docker image to ECR
         run: |
           ECR_REPO="public.ecr.aws/v3l0q3i3/ecr-lab"
-          docker push $ECR_REPO:gideonagbosu_ecr_lab
+          docker push $ECR_REPO:gideon_agbosu_ecr_lab
