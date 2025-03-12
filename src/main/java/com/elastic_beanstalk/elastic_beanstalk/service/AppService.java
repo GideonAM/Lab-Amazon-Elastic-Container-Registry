@@ -15,6 +15,6 @@ public class AppService {
                 Math.pow(Math.random(), Math.random());
             }
         }
-        return "CPU stress test complete";
+        return "CPU stress test is complete";
     }
 }
