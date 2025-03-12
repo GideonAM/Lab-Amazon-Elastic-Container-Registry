@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping
 public class AppController {
     private final AppService appService;
 
@@ -18,5 +18,10 @@ public class AppController {
     @GetMapping
     public ResponseEntity<String> home() {
         return ResponseEntity.ok(appService.home());
+    }
+
+    @GetMapping("/stress-cpu")
+    public ResponseEntity<String> stressCpu() {
+        return ResponseEntity.ok(appService.stressCpu());
     }
 }
