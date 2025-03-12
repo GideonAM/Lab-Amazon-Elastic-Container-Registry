@@ -10,9 +10,11 @@ public class AppService {
 
     public String stressCpu() {
         long startTime = System.currentTimeMillis();
-        while (System.currentTimeMillis() - startTime < 10000)
-            Math.pow(Math.random(), Math.random());
-
+        while (System.currentTimeMillis() - startTime < 30000) { // 30 seconds
+            for (int i = 0; i < 1000000; i++) {
+                Math.pow(Math.random(), Math.random()); // More CPU work
+            }
+        }
         return "CPU stress test complete";
     }
 }
